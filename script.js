@@ -107,27 +107,38 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   };
 
-  const toggleJellybean = (e) => {
-    let square = e.target;
-    if (square.classList.contains("active")) {
-      square.classList.remove("active");
-      jellybeans++;
-      totalSpent--;
-    } else {
-      if (jellybeans > 0) {
-        square.classList.add("active");
-        jellybeans--;
-        totalSpent++;
-      } else {
-        showPrompt("You cannot spend more jellybeans than you have.");
-      }
-    }
-    updateJellybeanCounter();
-  };
+const toggleJellybean = (e) => {
+  let square = e.target;
 
-  document.querySelectorAll(".square").forEach((square) => {
-    square.addEventListener("click", toggleJellybean);
-  });
+  // Check if the square is already active
+  if (square.classList.contains("active")) {
+    // Remove the 'active' class
+    square.classList.remove("active");
+    jellybeans++;
+    totalSpent--;
+  } else {
+    // Ensure there are jellybeans to spend
+    if (jellybeans > 0) {
+      // Add the 'active' class
+      square.classList.add("active");
+      jellybeans--;
+      totalSpent++;
+    } else {
+      showPrompt("You cannot spend more jellybeans than you have.");
+    }
+  }
+
+  // Toggle the 'selected' class to show or hide the background image
+  square.classList.toggle("selected");
+
+  // Update the jellybean counter
+  updateJellybeanCounter();
+};
+
+// Attach the event listener to all square elements
+document.querySelectorAll(".square").forEach((square) => {
+  square.addEventListener("click", toggleJellybean);
+});
 
   document
     .getElementById("finish-round")

@@ -65,10 +65,14 @@ main {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    background-color: rgba(181, 122, 190, 0.46); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.category .square.selected {
-    background-color: #4caf50;
+.square.selected {
+    background-image: url('assets/red-bean.png')
 }
 
 footer {
