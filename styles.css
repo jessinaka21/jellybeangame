@@ -5,6 +5,12 @@ body {
     padding: 0;
 }
 
+#info {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -40,9 +46,9 @@ main {
 .category {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 30px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(7, 2, 58, 0.671);
     margin: 10px;
     border-radius: 5px;
 }
@@ -89,10 +95,6 @@ footer {
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
-}
-
-footer button:hover {
-    background-color: #45a049;
 }
 
 .required {

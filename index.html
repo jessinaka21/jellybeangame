@@ -10,7 +10,13 @@
     <div class="container">
         <header>
             <img src="assets/jellybeantitle.png" width="100%">
-            <p id="info">Welcome to the Jelly Bean Game! Click "Start Game" to begin.</p>
+            <p id="info">How will you spend your jellybeans?<br>
+                Follow the game prompts for each round.<br>
+                Click on a square to place a jellybean.<br>
+                Make sure you pay in full for each item!<br>
+                Click again to remove a jellybean and spend it somewhere else.<br>
+                You must pay for at least one item in each "required" category (required categories are red and marked with a star).<br>
+                Good luck! Click "Start Game" to begin.</p>
             <button id="start-game" class="btn btn-success">Start Game</button>
             <!-- Display for the number of jellybeans -->
             <div id="jellybean-counter">Jellybeans left: 20</div>
@@ -20,7 +26,7 @@
             <div class="gameboard">
                 <!-- 1. HOUSING & UTILITIES -->
                 <div class="category">
-                    <h2>HOUSING & UTILITIES (required)</h2>
+                    <h2 style="color: red">HOUSING & UTILITIES &#9733;</h2>
                     <div class="item">Live with relatives & share utilities</div>
                     <div class="squares-container">
                         <div class="square"></div><div class="square"></div>
@@ -37,7 +43,7 @@
 
                 <!-- 2. INSURANCE -->
                 <div class="category">
-                    <h2>INSURANCE (required)</h2>
+                    <h2 style="color: red">INSURANCE &#9733;</h2>
                     <div class="item">CAR: Liability Only</div>
                     <div class="squares-container">
                         <div class="square"></div><div class="square"></div>
@@ -48,7 +54,7 @@
                     </div>
                     <div class="item">HEALTH: None</div>
                     <div class="squares-container">
-                        <div>No cost</div>
+                        <div><strong>No cost</strong></div>
                     </div>
                     <div class="item">HEALTH: Job Accident Coverage</div>
                     <div class="squares-container">
@@ -66,7 +72,7 @@
 
                 <!-- 3. PHONE & INTERNET -->
                 <div class="category">
-                    <h2>PHONE & INTERNET</h2>
+                    <h2 style="color: blue">PHONE & INTERNET</h2>
                     <div class="item">Basic phone</div>
                     <div class="squares-container">
                         <div class="square"></div>
@@ -87,7 +93,7 @@
 
                 <!-- 4. GIFTS -->
                 <div class="category">
-                    <h2>GIFTS</h2>
+                    <h2 style="color: green">GIFTS</h2>
                     <div class="item">Make gifts</div>
                     <div class="squares-container">
                         <div class="square"></div>
@@ -104,10 +110,10 @@
 
                 <!-- 5. SAVINGS -->
                 <div class="category">
-                    <h2>SAVINGS</h2>
+                    <h2 style="color: purple">SAVINGS</h2>
                     <div class="item">Piggy bank</div>
                     <div class="squares-container">
-                        <div>No cost</div>
+                        <div><strong>No cost</strong></div>
                     </div>
                     <div class="item">5% of income</div>
                     <div class="squares-container">
@@ -129,10 +135,10 @@
 
                 <!-- 6. FURNITURE & HOUSEWARES -->
                 <div class="category">
-                    <h2>FURNITURE & HOUSEWARES (required)</h2>
+                    <h2 style="color: red">FURNITURE & HOUSEWARES &#9733;</h2>
                     <div class="item">Use hand-me-downs from fam/friends</div>
                     <div class="squares-container">
-                        <div>No cost</div>
+                        <div><strong>No cost</strong></div>
                     </div>
                     <div class="item">Rent furniture or live in furnished apartment</div>
                     <div class="squares-container">
@@ -150,10 +156,10 @@
 
                 <!-- 7. FUN -->
                 <div class="category">
-                    <h2>FUN</h2>
+                    <h2 style="color: green">FUN</h2>
                     <div class="item">Hiking, walks, hang out with friends, library, free local events</div>
                     <div class="squares-container">
-                        <div>No cost</div>
+                        <div><strong>No cost</strong></div>
                     </div>
                     <div class="item">TV, snacks, driving around</div>
                     <div class="squares-container">
@@ -179,7 +185,7 @@
 
                 <!-- 8. PERSONAL CARE -->
                 <div class="category">
-                    <h2>PERSONAL CARE</h2>
+                    <h2 style="color: blue">PERSONAL CARE</h2>
                     <div class="item">Basic hygiene: shampoo, hair product, make-up</div>
                     <div class="squares-container">
                         <div class="square"></div>
@@ -196,7 +202,7 @@
 
                 <!-- 9. FOOD -->
                 <div class="category">
-                    <h2>FOOD (required)</h2>
+                    <h2 style="color: red">FOOD &#9733;</h2>
                     <div class="item">Eat at home, pack lunch, dinner out once per week</div>
                     <div class="squares-container">
                         <div class="square"></div><div class="square"></div>
@@ -213,10 +219,10 @@
 
                 <!-- 10. CLOTHES & LAUNDRY -->
                 <div class="category">
-                    <h2>CLOTHES & LAUNDRY (required)</h2>
+                    <h2 style="color: red">CLOTHES & LAUNDRY &#9733;</h2>
                     <div class="item">Wear what you have</div>
                     <div class="squares-container">
-                        <div>No cost</div>
+                        <div><strong>No cost</strong></div>
                     </div>
                     <div class="item">Shop at thrift stores</div>
                     <div class="squares-container">
@@ -236,7 +242,7 @@
                     </div>
                     <div class="item">Do laundry at parents' or friends' home</div>
                     <div class="squares-container">
-                        <div>No cost</div>
+                        <div><strong>No cost</strong></div>
                     </div>
                     <div class="item">Go to a laundromat</div>
                     <div class="squares-container">
@@ -250,10 +256,10 @@
 
                 <!-- 11. TRANSPORTATION -->
                 <div class="category">
-                    <h2>TRANSPORTATION (required)</h2>
+                    <h2 style="color: red">TRANSPORTATION &#9733;</h2>
                     <div class="item">Walk or Bike</div>
                     <div class="squares-container">
-                        <div>No cost</div>
+                        <div><strong>No cost</strong></div>
                     </div>
                     <div class="item">Ride the bus or train</div>
                     <div class="squares-container">
@@ -275,7 +281,7 @@
 
                 <!-- 12. EXTRAS -->
                 <div class="category">
-                    <h2>EXTRAS</h2>
+                    <h2 style="color: purple">EXTRAS</h2>
                     <div class="item">Extra TV channels</div>
                     <div class="squares-container">
                         <div class="square"></div>
@@ -295,7 +301,7 @@
             <div id="game-prompts"></div>
 
             <!-- Finish Round Button -->
-            <button id="finish-round">Finish Round</button>
+            <button id="finish-round" class="btn">Finish Round</button>
         </main>
 
         <footer>
