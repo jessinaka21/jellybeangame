@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jelly Bean Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Jelly Bean Game</h1>
+            <p id="info">Welcome to the Jelly Bean Game! Click "Start Game" to begin.</p>
+            <button id="start-game" class="btn btn-success">Start Game</button>
+            <!-- Display for the number of jellybeans -->
+            <div id="jellybean-counter">Jellybeans left: 20</div>
+        </header>
+
+        <main>
+            <div class="gameboard">
+                <!-- 1. HOUSING & UTILITIES -->
+                <div class="category">
+                    <h2>HOUSING & UTILITIES (required)</h2>
+                    <div class="item">Live with relatives & share utilities</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Apartment with roommates, shared room and utilities</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Apartment of your own</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 2. INSURANCE -->
+                <div class="category">
+                    <h2>INSURANCE (required)</h2>
+                    <div class="item">CAR: Liability Only</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">CAR: Full Coverage</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">HEALTH: None</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">HEALTH: Job Accident Coverage</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">HEALTH: Full Health Coverage</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">HOME: Home or Renters Insurance</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 3. PHONE & INTERNET -->
+                <div class="category">
+                    <h2>PHONE & INTERNET</h2>
+                    <div class="item">Basic phone</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">New iPhone with Apple music</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Shared internet, slower speed</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Fast internet, ideal for streaming video</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 4. GIFTS -->
+                <div class="category">
+                    <h2>GIFTS</h2>
+                    <div class="item">Make gifts</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Buy small gifts occasionally</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Buy gifts often</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 5. SAVINGS -->
+                <div class="category">
+                    <h2>SAVINGS</h2>
+                    <div class="item">Piggy bank</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">5% of income</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">10% of income</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Invest for retirement</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">10% to charity or tithes</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 6. FURNITURE & HOUSEWARES -->
+                <div class="category">
+                    <h2>FURNITURE & HOUSEWARES (required)</h2>
+                    <div class="item">Use hand-me-downs from fam/friends</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Rent furniture or live in furnished apartment</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Buy secondhand at yard sales/thrift stores</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Buy new furniture</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 7. FUN -->
+                <div class="category">
+                    <h2>FUN</h2>
+                    <div class="item">Hiking, walks, hang out with friends, library, free local events</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">TV, snacks, driving around</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Going to the movies</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Fitness classes/gym membership</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Art, photography, music hobbies</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Vacations / Travel</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 8. PERSONAL CARE -->
+                <div class="category">
+                    <h2>PERSONAL CARE</h2>
+                    <div class="item">Basic hygiene: shampoo, hair product, make-up</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Occasional hair cuts, hair coloring, or nail appointments</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Regular professional hair/nail appointments, high-end makeup</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 9. FOOD -->
+                <div class="category">
+                    <h2>FOOD (required)</h2>
+                    <div class="item">Eat at home, pack lunch, dinner out once per week</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Fast food lunches, dinner out once per week, other meals at home</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">All meals out</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 10. CLOTHES & LAUNDRY -->
+                <div class="category">
+                    <h2>CLOTHES & LAUNDRY (required)</h2>
+                    <div class="item">Wear what you have</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Shop at thrift stores</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Shop clearance racks</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Buy one new item per month, full price</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Buy two new items per month, full price</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Do laundry at parents' or friends' home</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Go to a laundromat</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Your apartment has a washer and dryer</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 11. TRANSPORTATION -->
+                <div class="category">
+                    <h2>TRANSPORTATION (required)</h2>
+                    <div class="item">Walk or Bike</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Ride the bus or train</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Drive family car, buy gas</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Buy a used car & buy gas</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                    <div class="item">Buy a new car & buy gas</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+
+                <!-- 12. EXTRAS -->
+                <div class="category">
+                    <h2>EXTRAS</h2>
+                    <div class="item">Extra TV channels</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Movie club subscription</div>
+                    <div class="squares-container">
+                        <div class="square"></div>
+                    </div>
+                    <div class="item">Software or gaming subscription</div>
+                    <div class="squares-container">
+                        <div class="square"></div><div class="square"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prompt section to give feedback to the user -->
+            <div id="game-prompts"></div>
+
+            <!-- Finish Round Button -->
+            <button id="finish-round">Finish Round</button>
+        </main>
+
+        <footer>
+            REFERENCES: Parker, L. (n.d.) The Bean Game. Washington State University
+Extension, Family Resource Management Specialist.<br>
+Office of State Treasurer John Perdue. (n.d.). The Budget Game: Living
+on a 20 Square Salary. Financial Education Programs, Charleston, WV.<br>
+Jana Darrington, M.S. (n.d.) Utah State University Extension
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+             
+
