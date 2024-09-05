@@ -10,22 +10,26 @@
     <div class="container">
         <header>
             <img src="assets/jellybeantitle.png" width="100%">
-            <p id="info">How will you spend your jellybeans?<br>
-                Follow the game prompts for each round.<br>
-                Click on a square to place a jellybean.<br>
-                Make sure you pay in full for each item!<br>
-                Click again to remove a jellybean and spend it somewhere else.<br>
-                You must pay for at least one item in each "required" category (required categories are red and marked with a star).<br>
-                Good luck! Click "Start Game" to begin.</p>
+            <p class="info">How will you spend your jellybeans?</p>
+                <p class="info">Follow the game prompts for each round.</p>
+                <p class="info">Click on a square to place a jellybean.</p>
+                <p class="info">Make sure you pay in full for each item!</p>
+                <p class="info">Click again to remove a jellybean and spend it somewhere else.</p>
+                <p class="info">You must pay for at least one item in each <span style="color: red"><strong>required</strong></span>
+                    category (<span style="color: red"><strong>red</strong></span> categories marked with a star <span style="color: red">&#9733;</span>).</p>
+                <p class="info">Good luck! Click "Start Game" to begin.</p>
             <button id="start-game" class="btn btn-success">Start Game</button>
             <!-- Display for the number of jellybeans -->
-            <div id="jellybean-counter">Jellybeans left: 20</div>
+            <div class="counter-container">
+                <div id="jellybean"><img src="assets/red-bean.png" width="40px"/></div>
+                <div id="jellybean-counter">Jellybeans left: 20</div>
+            </div>
         </header>
 
         <main>
             <div class="gameboard">
                 <!-- 1. HOUSING & UTILITIES -->
-                <div class="category">
+                <div class="category required">
                     <h2 style="color: red">HOUSING & UTILITIES &#9733;</h2>
                     <div class="item">Live with relatives & share utilities</div>
                     <div class="squares-container">
@@ -42,7 +46,7 @@
                 </div>
 
                 <!-- 2. INSURANCE -->
-                <div class="category">
+                <div class="category required">
                     <h2 style="color: red">INSURANCE &#9733;</h2>
                     <div class="item">CAR: Liability Only</div>
                     <div class="squares-container">
@@ -134,7 +138,7 @@
                 </div>
 
                 <!-- 6. FURNITURE & HOUSEWARES -->
-                <div class="category">
+                <div class="category required">
                     <h2 style="color: red">FURNITURE & HOUSEWARES &#9733;</h2>
                     <div class="item">Use hand-me-downs from fam/friends</div>
                     <div class="squares-container">
@@ -201,7 +205,7 @@
                 </div>
 
                 <!-- 9. FOOD -->
-                <div class="category">
+                <div class="category required">
                     <h2 style="color: red">FOOD &#9733;</h2>
                     <div class="item">Eat at home, pack lunch, dinner out once per week</div>
                     <div class="squares-container">
@@ -218,7 +222,7 @@
                 </div>
 
                 <!-- 10. CLOTHES & LAUNDRY -->
-                <div class="category">
+                <div class="category required">
                     <h2 style="color: red">CLOTHES & LAUNDRY &#9733;</h2>
                     <div class="item">Wear what you have</div>
                     <div class="squares-container">
@@ -255,7 +259,7 @@
                 </div>
 
                 <!-- 11. TRANSPORTATION -->
-                <div class="category">
+                <div class="category required">
                     <h2 style="color: red">TRANSPORTATION &#9733;</h2>
                     <div class="item">Walk or Bike</div>
                     <div class="squares-container">
