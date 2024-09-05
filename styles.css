@@ -20,7 +20,14 @@ body {
 }
 
 .counter-container {
-    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0; /* Adjust this value as needed */
+    padding: 10px;
+    background-color: white; /* Optional: to ensure readability */
+    border: 1px solid #ccc; /* Optional: add a border */
+    z-index: 1000; /* Ensure it stays above other content */
+    display: none;
     align-items: center;
     justify-content: center;
     gap: 10px;

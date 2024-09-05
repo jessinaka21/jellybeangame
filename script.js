@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentRound = 1;
   let jellybeans = 20;
   let totalSpent = 0;
+  let gameStarted = false;
   const requiredCategories = [
     "HOUSING & UTILITIES",
     "INSURANCE",
@@ -107,42 +108,68 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   };
 
-const toggleJellybean = (e) => {
-  let square = e.target;
-
-  // Check if the square is already active
-  if (square.classList.contains("active")) {
-    // Remove the 'active' class
-    square.classList.remove("active");
-    jellybeans++;
-    totalSpent--;
-  } else {
-    // Ensure there are jellybeans to spend
-    if (jellybeans > 0) {
-      // Add the 'active' class
-      square.classList.add("active");
-      jellybeans--;
-      totalSpent++;
-    } else {
-      showPrompt("You cannot spend more jellybeans than you have.");
+  const toggleJellybean = (e) => {
+    if (!gameStarted) {
+      return;
     }
-  }
+    
+    let square = e.target;
 
-  // Toggle the 'selected' class to show or hide the background image
-  square.classList.toggle("selected");
+    let maxJellybeansAllowed;
+    switch (currentRound) {
+      case 1:
+        maxJellybeansAllowed = 20;
+        break;
+      case 2:
+        maxJellybeansAllowed = 13;
+        break;
+      case 4:
+        maxJellybeansAllowed = 15;
+        break;
+      default:
+        maxJellybeansAllowed = Number.POSITIVE_INFINITY;
+        break;
+    }
 
-  // Update the jellybean counter
-  updateJellybeanCounter();
-};
+    // Check if the square is already active
+    if (square.classList.contains("active")) {
+      // Remove the 'active' class
+      square.classList.remove("active");
+      jellybeans++;
+      totalSpent--;
+    } else {
+      // Ensure there are jellybeans to spend
+      if (jellybeans > 0) {
+        // Add the 'active' class
+        square.classList.add("active");
+        jellybeans--;
+        totalSpent++;
+      } else {
+        showPrompt("You cannot spend more jellybeans than you have.");
+      }
+    }
 
-// Attach the event listener to all square elements
-document.querySelectorAll(".square").forEach((square) => {
-  square.addEventListener("click", toggleJellybean);
-});
+    // Toggle the 'selected' class to show or hide the background image
+    square.classList.toggle("selected");
+
+    // Update the jellybean counter
+    updateJellybeanCounter();
+  };
+
+  // Attach the event listener to all square elements
+  document.querySelectorAll(".square").forEach((square) => {
+    square.addEventListener("click", toggleJellybean);
+  });
 
   document
     .getElementById("finish-round")
     .addEventListener("click", finishRound);
+
+  // Show the counter-container when the Start Game button is clicked
+  document.getElementById("start-game").addEventListener("click", function () {
+    document.querySelector(".counter-container").style.display = "flex";
+    gameStarted = true;
+  });
 
   updateJellybeanCounter();
 });
