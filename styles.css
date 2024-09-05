@@ -1,11 +1,19 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-image: url('assets/jellybean-bg.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+h2 {
+    font-family: "Kanit", sans-serif;
 }
 
 .info {
@@ -34,7 +42,8 @@ body {
 }
 
 #jellybean-counter {
-    font-size: 1.2em;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.8em;
     margin-top: 10px;
 }
 
