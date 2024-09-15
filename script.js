@@ -43,11 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       let items =
         categoryDiv.parentElement.querySelectorAll(".squares-container");
-      let isCovered = Array.from(items).some(
-        (container) =>
-          container.querySelectorAll(".square.active").length ===
-          container.children.length
-      );
+      let isCovered = Array.from(items).some((container) => {
+        let squares = container.querySelectorAll(".square");
+        let activeSquares = container.querySelectorAll(".square.active").length;
+        let checkboxChecked =
+          container.querySelector('input[type="checkbox"]')?.checked || false;
+        return activeSquares === squares.length || checkboxChecked;
+      });
+
       if (!isCovered) {
         showPrompt(
           `Please cover the cost of at least one item in the ${category} category.`
@@ -108,8 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   };
 
+  let isRoundOver = false;
+
   const toggleJellybean = (e) => {
-    if (!gameStarted) {
+    if (!gameStarted || isRoundOver) {
       return;
     }
     
@@ -139,11 +144,16 @@ document.addEventListener("DOMContentLoaded", function () {
       totalSpent--;
     } else {
       // Ensure there are jellybeans to spend
-      if (jellybeans > 0) {
+      if (jellybeans > 0 && totalSpent < maxJellybeansAllowed) {
         // Add the 'active' class
         square.classList.add("active");
         jellybeans--;
         totalSpent++;
+      } else if (totalSpent >= maxJellybeansAllowed) {
+        showPrompt(
+          "You have spent all your allocated jellybeans for this round."
+        );
+        isRoundOver = true;
       } else {
         showPrompt("You cannot spend more jellybeans than you have.");
       }
