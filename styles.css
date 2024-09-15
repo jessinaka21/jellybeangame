@@ -123,3 +123,7 @@ footer {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.jellybean-counter-low {
+  color: red;
+}

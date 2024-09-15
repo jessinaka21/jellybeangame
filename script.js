@@ -12,10 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
     "TRANSPORTATION",
   ];
 
+
   const updateJellybeanCounter = () => {
-    document.getElementById(
-      "jellybean-counter"
-    ).textContent = `Jellybeans left: ${jellybeans}`;
+    const counterElement = document.getElementById("jellybean-counter");
+    counterElement.textContent = `Jellybeans left: ${jellybeans}`;
+
+  if (jellybeans <= 5) {
+      counterElement.classList.add("jellybean-counter-low");
+    } else {
+      counterElement.classList.remove("jellybean-counter-low");
+    }
   };
 
   const showPrompt = (message) => {
@@ -135,17 +141,12 @@ document.addEventListener("DOMContentLoaded", function () {
         maxJellybeansAllowed = Number.POSITIVE_INFINITY;
         break;
     }
-
-    // Check if the square is already active
     if (square.classList.contains("active")) {
-      // Remove the 'active' class
       square.classList.remove("active");
       jellybeans++;
       totalSpent--;
     } else {
-      // Ensure there are jellybeans to spend
       if (jellybeans > 0 && totalSpent < maxJellybeansAllowed) {
-        // Add the 'active' class
         square.classList.add("active");
         jellybeans--;
         totalSpent++;
@@ -162,11 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle the 'selected' class to show or hide the background image
     square.classList.toggle("selected");
 
-    // Update the jellybean counter
     updateJellybeanCounter();
   };
-
-  // Attach the event listener to all square elements
   document.querySelectorAll(".square").forEach((square) => {
     square.addEventListener("click", toggleJellybean);
   });
@@ -175,7 +173,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("finish-round")
     .addEventListener("click", finishRound);
 
-  // Show the counter-container when the Start Game button is clicked
   document.getElementById("start-game").addEventListener("click", function () {
     document.querySelector(".counter-container").style.display = "flex";
     gameStarted = true;
