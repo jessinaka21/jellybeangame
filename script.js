@@ -25,7 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const showPrompt = (message) => {
-    document.getElementById("game-prompts").textContent = message;
+    const alertOverlay = document.getElementById("alert-overlay");
+    const alertMessage = document.getElementById("alert-message");
+
+    alertMessage.textContent = message;
+    alertOverlay.style.display = "flex"; // Show the overlay
+
+    // Hide the overlay after a few seconds
+    setTimeout(() => {
+      alertOverlay.style.display = "none";
+    }, 4000);
   };
 
   const resetPrompts = () => {
@@ -120,8 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let isRoundOver = false;
 
   const toggleJellybean = (e) => {
-    if (!gameStarted || isRoundOver) {
-      return;
+    if (!gameStarted) {
+      gameStarted = true; // Start the game
+      document.querySelector(".counter-container").style.display = "flex"; // Show the counter-container
+    }
+
+    if (isRoundOver) {
+      return; // Do nothing if the round is over
     }
     
     let square = e.target;
@@ -146,7 +160,12 @@ document.addEventListener("DOMContentLoaded", function () {
       jellybeans++;
       totalSpent--;
     } else {
-      if (jellybeans > 0 && totalSpent < maxJellybeansAllowed) {
+      if (jellybeans <= 0 || totalSpent >= maxJellybeansAllowed) {
+        showPrompt(
+          "You have spent all your jellybeans!"
+        );
+        return;
+      } else if (jellybeans > 0 && totalSpent < maxJellybeansAllowed) {
         square.classList.add("active");
         jellybeans--;
         totalSpent++;

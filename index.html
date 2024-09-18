@@ -24,7 +24,7 @@
                 <p class="info">Click again to remove a jellybean and spend it somewhere else.</p>
                 <p class="info">You must pay for at least one item in each <span style="color: red"><strong>required</strong></span>
                     category (<span style="color: red"><strong>red</strong></span> categories marked with a star <span style="color: red">&#9733;</span>).</p>
-                <p class="info">Good luck! Click "Start Game" to begin.</p>
+                <p class="info">Good luck! Click "Start Game" or click on a square to begin.</p>
             <button id="start-game" class="btn btn-success">Start Game</button>
             <!-- Display for the number of jellybeans -->
             <div class="counter-container">
@@ -315,8 +315,11 @@
                 </div>
             </div>
 
-            <!-- Prompt section to give feedback to the user -->
-            <div id="game-prompts"></div>
+            <!-- Prompt alert to give feedback to the user -->
+            <div id="alert-overlay" style="display: none;">
+                <p id="alert-message"></p>
+            </div>
+
 
             <!-- Finish Round Button -->
             <button id="finish-round" class="btn">Finish Round</button>
