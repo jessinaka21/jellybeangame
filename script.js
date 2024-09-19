@@ -26,9 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const showPrompt = (message) => {
     const alertOverlay = document.getElementById("alert-overlay");
-    const alertMessage = document.getElementById("alert-message");
-
-    alertMessage.textContent = message;
+    const alertMessage = document.getElementById("alert-message"); 
+    alertMessage.innerHTML = message.replace(/\n/g, "<br>");
     alertOverlay.style.display = "flex"; // Show the overlay
 
     // Hide the overlay after a few seconds
@@ -68,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!isCovered) {
         showPrompt(
-          `Please cover the cost of at least one item in the ${category} category.`
+          `Please cover the cost of at least one item\nin the ${category} category.`
         );
         return false;
       }
@@ -88,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentRound === 1) {
       jellybeans = 13;
       showPrompt(
-        "Your income has been cut to 13 jellybeans. Remove 7 jellybeans to continue."
+        "Your income has been cut to 13 jellybeans!\nRemove 7 jellybeans to continue."
       );
       currentRound++;
     } else if (currentRound === 2) {
@@ -97,18 +96,18 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       showPrompt(
-        "Someone in your family broke their leg. If you do not have insurance, remove 3 jellybeans."
+        "Someone in your family broke their leg. :(\nIf you do not have insurance, remove 3 jellybeans."
       );
       currentRound++;
     } else if (currentRound === 3) {
       jellybeans += hasInsurance() ? 0 : -3;
       showPrompt(
-        "You have received a raise of 2 jellybeans. Spend them to finish the game."
+        "You have received a raise of 2 jellybeans!\nSpend them to finish the game."
       );
       jellybeans += 2;
       currentRound++;
     } else if (currentRound === 4) {
-      showPrompt("Congratulations! You have completed the game.");
+      showPrompt("Congratulations!\nYou have completed the game.");
       document.getElementById("finish-round").disabled = true;
     }
     updateJellybeanCounter();
@@ -128,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let isRoundOver = false;
 
+  const clickSound = new Audio("assets/place-bean.wav");
   const toggleJellybean = (e) => {
     if (!gameStarted) {
       gameStarted = true; // Start the game
@@ -167,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       } else if (jellybeans > 0 && totalSpent < maxJellybeansAllowed) {
         square.classList.add("active");
+        clickSound.play();
         jellybeans--;
         totalSpent++;
       } else if (totalSpent >= maxJellybeansAllowed) {
